@@ -1,1 +1,400 @@
-# placeholder.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Planner's Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F8F7FF;
+            --text-dark: #1C2C4C;
+            --text-accent: #2AA198;
+            --button-bg: #FFD100;
+            --button-text: #1C2C4C;
+            --section-padding: 4rem 2rem;
+            --max-width: 900px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /* Optional: Set base font size if needed for rem calculation consistency */
+            /* font-size: 16px; */
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem 2rem 2rem;
+            min-height: 70vh;
+            justify-content: center;
+        }
+
+        .hero-title-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo svg {
+             /* --- SCALED SVG TO MATCH H1 HEIGHT --- */
+            height: 10.08rem; /* Matches calculated 3 lines height (3 * 1.2 * 2.8rem) */
+            width: 11.86rem;  /* Matches calculated width for aspect ratio */
+             /* --- End Scaling --- */
+            flex-shrink: 0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2; /* Crucial for height calculation */
+            color: var(--text-dark);
+            text-align: left;
+             margin-bottom: 0;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-accent);
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+             width: 100%;
+             text-align: center;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            opacity: 0.9;
+             width: 100%;
+             text-align: center;
+             margin-left: auto;
+             margin-right: auto;
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #eabf00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Main Content Sections */
+        main section {
+            padding: var(--section-padding);
+            border-top: 1px solid #e0e0ff;
+        }
+
+        main section:first-child {
+             padding-top: 2rem;
+             border-top: none;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        section h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+         section p, section ul {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+         section ul {
+            list-style: disc;
+            padding-left: 25px;
+        }
+         section li {
+             margin-bottom: 0.5rem;
+         }
+
+        /* Roadmap Specifics */
+        #roadmap h3 {
+             margin-top: 2.5rem;
+             border-bottom: 2px solid var(--text-accent);
+             padding-bottom: 0.3rem;
+             display: inline-block;
+         }
+         #roadmap h3:first-of-type {
+            margin-top: 0;
+         }
+
+        /* Get Involved Specifics */
+        #get-involved {
+            text-align: center;
+        }
+
+        #get-involved ul {
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+         #get-involved .contact-info {
+             font-size: 1.1rem;
+             margin-top: 2rem;
+         }
+         #get-involved .contact-info a {
+             color: var(--text-accent);
+             font-weight: 600;
+             text-decoration: none;
+         }
+          #get-involved .contact-info a:hover {
+              text-decoration: underline;
+          }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+            border-top: 1px solid #e0e0ff;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--text-accent);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+             .hero h1 {
+                 font-size: 2.2rem; /* Adjust base H1 size for tablets */
+             }
+             /* Recalculate SVG size for tablet H1 size */
+             .logo svg {
+                 height: 7.92rem; /* 3 * 1.2 * 2.2rem */
+                 width: 9.32rem;  /* (100/85) * 7.92rem */
+             }
+             .hero .tagline {
+                 font-size: 1.1rem;
+             }
+             section h2 {
+                 font-size: 1.8rem;
+             }
+             section h3 {
+                 font-size: 1.3rem;
+             }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                 min-height: 60vh;
+                 padding: 2rem 1rem 1rem 1rem;
+             }
+            .hero-title-group {
+                flex-direction: column;
+                gap: 1rem;
+                 margin-bottom: 1.5rem;
+            }
+             /* Explicitly set logo size for mobile H1 size */
+            .logo svg {
+                 height: 6.48rem; /* Matches calculated 3 lines mobile height (3 * 1.2 * 1.8rem) */
+                 width: 7.62rem; /* Matches calculated width for mobile height */
+             }
+            .hero h1 {
+                font-size: 1.8rem; /* Mobile H1 size */
+                text-align: center;
+            }
+            .hero .tagline {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+             .cta-button {
+                 padding: 0.7rem 1.5rem;
+                 font-size: 0.9rem;
+             }
+             main section:first-child {
+                 padding-top: 1.5rem;
+             }
+             section h2 {
+                font-size: 1.6rem;
+            }
+             section h3 {
+                 font-size: 1.2rem;
+             }
+             section p, section ul {
+                 font-size: 0.95rem;
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-title-group">
+            <div class="logo">
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="100" height="85" viewBox="0 0 100 85" xmlns="http://www.w3.org/2000/svg">
+                    <title>Shorter Map Pin Icon with Compass Rose</title>
+                    <desc>A deep navy, flat-style map pin with a proportionally reduced height below the compass rose. Features smooth curves and an obtuse point. Contains a detailed golden yellow compass rose.</desc>
+                    <path id="pin-background" d="M 50 80 C 35 70, 15 55, 15 35 A 35 35 0 1 1 85 35 C 85 55, 65 70, 50 80 Z" fill="#1C2C4C" stroke="none" />
+                    <g id="compass-rose" transform="translate(0, -15)">
+                        <path d="M 37.3 37.3 A 18 18 0 0 1 62.7 37.3" stroke="#FFD100" stroke-width="4" fill="none" />
+                        <path d="M 62.7 37.3 A 18 18 0 0 1 62.7 62.7" stroke="#FFD100" stroke-width="4" fill="none" />
+                        <path d="M 62.7 62.7 A 18 18 0 0 1 37.3 62.7" stroke="#FFD100" stroke-width="4" fill="none" />
+                        <path d="M 37.3 62.7 A 18 18 0 0 1 37.3 37.3" stroke="#FFD100" stroke-width="4" fill="none" />
+                        <polygon points="50,22 53,50 47,50" fill="#FFD100" />
+                        <polygon points="50,78 53,50 47,50" fill="#FFD100" />
+                        <polygon points="78,50 50,53 50,47" fill="#FFD100" />
+                        <polygon points="22,50 50,53 50,47" fill="#FFD100" />
+                        <circle cx="50" cy="50" r="3" fill="#1C2C4C" />
+                    </g>
+                </svg>
+            </div>
+            <h1>THE<br>PLANNER’S<br>ASSISTANT</h1>
+        </div>
+        <p class="tagline">Spatially aware. Policy literate. Open by design.</p>
+        <p class="description">
+            An open-source, civic-tech initiative using AI, spatial analysis, and policy interpretation to help make planning decisions clearer, faster, and fairer.
+        </p>
+        <a href="#get-involved" class="cta-button">Get Involved</a>
+    </header>
+
+    <main>
+        <section id="challenge" class="container">
+            <h2>The Challenge: Planning is Complex.</h2>
+            <p>UK planning decisions involve navigating dense policy documents, complex spatial constraints, discretionary judgment, and significant public impact. Traditional tools often fall short, leaving planners overwhelmed and processes opaque. We believe technology can help – if built thoughtfully.</p>
+        </section>
+
+        <section id="approach" class="container">
+            <h2>Our Approach: Decision Support, Not Replacement.</h2>
+            <p>The Planner’s Assistant is an experimental tool designed to augment, not automate, planning expertise. We're combining:</p>
+            <ul>
+                <li><strong>AI Reasoning:</strong> To understand and interpret planning policy contextually.</li>
+                <li><strong>GIS Analysis:</strong> To integrate real-world spatial constraints directly.</li>
+                <li><strong>Explainable Outputs:</strong> To ensure reasoning is transparent and auditable.</li>
+            </ul>
+            <p>Our goal is to build open tools that help humans see clearly, reason transparently, and act justly in the built environment – supporting officers, engaging communities, and improving outcomes.</p>
+        </section>
+
+        <section id="roadmap" class="container">
+            <h2>What We're Building: An Evolving AI Co-Pilot for Planning</h2>
+            <p>Our open-source prototype is already demonstrating core capabilities, and we're actively developing the next generation of features:</p>
+
+            <h3>✅ Current Capabilities (Operational):</h3>
+            <ul>
+                 <li><strong>Integrated Spatial & Policy Checks:</strong> Seamlessly links GIS constraint analysis (like Green Belt checks via PostGIS) with initial AI-powered policy interpretation and report drafting assistance.</li>
+            </ul>
+
+
+            <h3>⚙️ Active Development Focus:</h3>
+             <ul>
+                 <li><strong>Deep Policy Understanding:</strong> Moving beyond keywords to semantic understanding – parsing, indexing (with Qdrant), and enabling search across entire local plans and national frameworks (NPPF).</li>
+                 <li><strong>Explainable AI Reasoning:</strong> Building more sophisticated, multi-step AI logic for nuanced assessments (handling discretion, trade-offs) with transparent, traceable outputs.</li>
+            </ul>
+
+            <h3>🌱 Future Vision:</h3>
+             <ul>
+                 <li><strong>Interactive & Auditable AI:</strong> Develop user interfaces where planners can inspect, adjust, and truly trust the AI's reasoning process.</li>
+                 <li><strong>Expanded Planning Toolkit:</strong> Add modules for specific tasks like viability, permitted development, and consultation analysis.</li>
+                 <li><strong>Systemic Insights & Local Control:</strong> Explore tools for analysing planning patterns (Project 'Spatial Ledger') and enable self-hosting options for Local Authorities.</li>
+            </ul>
+
+            <p style="margin-top: 2rem; text-align: center;">We're focused on building trustworthy, useful AI – grounded in real-world planning needs, open by design, and built collaboratively.</p>
+        </section>
+
+        <section id="why-matters" class="container">
+            <h2>Why This Matters: Building Trustworthy Planning Tech</h2>
+             <p>Effective planning tech needs to handle real-world complexity:</p>
+             <ul>
+                <li><strong>Messy Data:</strong> Planning information lives in PDFs and inconsistent formats. We build tools to reason through it.</li>
+                <li><strong>Explainable AI:</strong> Outputs must link back to policy and data, flagging uncertainties. Trust requires transparency.</li>
+                <li><strong>Accessibility:</strong> We aim for solutions that are affordable and usable, avoiding dependency on closed, expensive APIs.</li>
+                <li><strong>Human-Centric:</strong> Technology should empower planners and communities, removing drudgery, not judgment.</li>
+            </ul>
+            <p>This isn't about hype. It's about careful, open development focused on public good.</p>
+        </section>
+
+        <section id="get-involved" class="container">
+            <h2>Get Involved: Help Shape the Future of Planning Tech</h2>
+            <p>The Planner’s Assistant is a collaborative civic experiment, not a finished product. We're looking for people passionate about planning, cities, housing, and public-interest technology to join us.</p>
+            <p><strong>We need diverse perspectives and skills:</strong></p>
+            <ul>
+                <li><strong>Planners, Policy Experts, Urbanists:</strong> To guide the tool's purpose, test its usefulness, and ensure it meets real-world needs.</li>
+                <li><strong>Developers & Engineers:</strong> (Python, FastAPI, PostGIS, Qdrant, React, etc.) To build, refine, and implement features.</li>
+                <li><strong>UX/UI Designers:</strong> To make the tools intuitive and accessible.</li>
+                <li><strong>Data Scientists & Analysts:</strong> To improve model accuracy and data integration.</li>
+                <li><strong>Anyone curious</strong> about how technology can responsibly support better planning outcomes.</li>
+            </ul>
+            <p>This is an open invitation to contribute – whether you build, test, critique, or advise. No prior planning tech experience is required, just a shared interest in making planning work better for everyone.</p>
+            <p><em>(If you've arrived here via a QR card – welcome! The project is real, the code is evolving, and the invitation is open.)</em></p>
+
+            <p class="contact-info">
+                <strong>Ready to explore?</strong><br>
+                Reach out: <a href="mailto:hello@theplannersassistant.uk">hello@theplannersassistant.uk</a><br>
+                </p>
+             <p style="margin-top: 2rem;">Let's build something meaningful, together.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            © 2025 The Planner’s Assistant Project Contributors<br>
+            An open civic-tech prototype for spatial planning support.<br>
+            Contact: <a href="mailto:hello@theplannersassistant.uk">hello@theplannersassistant.uk</a>
+        </div>
+    </footer>
+
+</body>
+</html>

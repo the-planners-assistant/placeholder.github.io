@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -163,7 +164,7 @@
         }
          section li {
              margin-bottom: 0.5rem;
-         }
+        }
 
         /* Roadmap Specifics */
         #roadmap h3 {
@@ -173,7 +174,7 @@
              display: inline-block;
          }
          #roadmap h3:first-of-type {
-            margin-top: 0;
+             margin-top: 0;
          }
 
         /* Get Involved Specifics */
@@ -197,8 +198,25 @@
              text-decoration: none;
          }
           #get-involved .contact-info a:hover {
-              text-decoration: underline;
+             text-decoration: underline;
           }
+
+        /* --- Added GitHub Link Style --- */
+         .github-link {
+             /* Inherits base style from .contact-info a */
+             display: inline-flex; /* Aligns icon and text */
+             align-items: center;  /* Vertically center icon and text */
+             gap: 0.4em;           /* Space between icon and text */
+             margin-top: 0.5rem;  /* Add some space above */
+         }
+         .github-link svg {
+             width: 1.2em; /* Slightly larger icon */
+             height: 1.2em;
+             fill: currentColor; /* Uses the link's color (var(--text-accent)) */
+             vertical-align: middle;
+             margin-bottom: 0.1em; /* Fine-tune vertical alignment */
+         }
+        /* --- End Added GitHub Link Style --- */
 
         /* Footer */
         footer {
@@ -237,28 +255,28 @@
         }
 
         @media (max-width: 600px) {
-            .hero {
+             .hero {
                  min-height: 60vh;
                  padding: 2rem 1rem 1rem 1rem;
              }
-            .hero-title-group {
-                flex-direction: column;
-                gap: 1rem;
+             .hero-title-group {
+                 flex-direction: column;
+                 gap: 1rem;
                  margin-bottom: 1.5rem;
-            }
+             }
              /* Explicitly set logo size for mobile H1 size */
-            .logo svg {
+             .logo svg {
                  height: 6.48rem; /* Matches calculated 3 lines mobile height (3 * 1.2 * 1.8rem) */
                  width: 7.62rem; /* Matches calculated width for mobile height */
              }
-            .hero h1 {
-                font-size: 1.8rem; /* Mobile H1 size */
-                text-align: center;
-            }
-            .hero .tagline {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-            }
+             .hero h1 {
+                 font-size: 1.8rem; /* Mobile H1 size */
+                 text-align: center;
+             }
+             .hero .tagline {
+                 font-size: 1rem;
+                 margin-bottom: 1.5rem;
+             }
              .cta-button {
                  padding: 0.7rem 1.5rem;
                  font-size: 0.9rem;
@@ -267,8 +285,8 @@
                  padding-top: 1.5rem;
              }
              section h2 {
-                font-size: 1.6rem;
-            }
+                 font-size: 1.6rem;
+             }
              section h3 {
                  font-size: 1.2rem;
              }
@@ -334,22 +352,22 @@
 
             <h3>✅ Current Capabilities (Operational):</h3>
             <ul>
-                 <li><strong>Integrated Spatial & Policy Checks:</strong> Seamlessly links GIS constraint analysis (like Green Belt checks via PostGIS) with initial AI-powered policy interpretation and report drafting assistance.</li>
+                <li><strong>Integrated Spatial & Policy Checks:</strong> Seamlessly links GIS constraint analysis (like Green Belt checks via PostGIS) with initial AI-powered policy interpretation and report drafting assistance.</li>
             </ul>
 
 
             <h3>⚙️ Active Development Focus:</h3>
              <ul>
-                 <li><strong>Deep Policy Understanding:</strong> Moving beyond keywords to semantic understanding – parsing, indexing (with Qdrant), and enabling search across entire local plans and national frameworks (NPPF).</li>
-                 <li><strong>Explainable AI Reasoning:</strong> Building more sophisticated, multi-step AI logic for nuanced assessments (handling discretion, trade-offs) with transparent, traceable outputs.</li>
-            </ul>
+                <li><strong>Deep Policy Understanding:</strong> Moving beyond keywords to semantic understanding – parsing, indexing (with Qdrant), and enabling search across entire local plans and national frameworks (NPPF).</li>
+                <li><strong>Explainable AI Reasoning:</strong> Building more sophisticated, multi-step AI logic for nuanced assessments (handling discretion, trade-offs) with transparent, traceable outputs.</li>
+             </ul>
 
             <h3>🌱 Future Vision:</h3>
              <ul>
-                 <li><strong>Interactive & Auditable AI:</strong> Develop user interfaces where planners can inspect, adjust, and truly trust the AI's reasoning process.</li>
-                 <li><strong>Expanded Planning Toolkit:</strong> Add modules for specific tasks like viability, permitted development, and consultation analysis.</li>
-                 <li><strong>Systemic Insights & Local Control:</strong> Explore tools for analysing planning patterns (Project 'Spatial Ledger') and enable self-hosting options for Local Authorities.</li>
-            </ul>
+                <li><strong>Interactive & Auditable AI:</strong> Develop user interfaces where planners can inspect, adjust, and truly trust the AI's reasoning process.</li>
+                <li><strong>Expanded Planning Toolkit:</strong> Add modules for specific tasks like viability, permitted development, and consultation analysis.</li>
+                <li><strong>Systemic Insights & Local Control:</strong> Explore tools for analysing planning patterns (Project 'Spatial Ledger') and enable self-hosting options for Local Authorities.</li>
+             </ul>
 
             <p style="margin-top: 2rem; text-align: center;">We're focused on building trustworthy, useful AI – grounded in real-world planning needs, open by design, and built collaboratively.</p>
         </section>
@@ -362,7 +380,7 @@
                 <li><strong>Explainable AI:</strong> Outputs must link back to policy and data, flagging uncertainties. Trust requires transparency.</li>
                 <li><strong>Accessibility:</strong> We aim for solutions that are affordable and usable, avoiding dependency on closed, expensive APIs.</li>
                 <li><strong>Human-Centric:</strong> Technology should empower planners and communities, removing drudgery, not judgment.</li>
-            </ul>
+             </ul>
             <p>This isn't about hype. It's about careful, open development focused on public good.</p>
         </section>
 
@@ -383,8 +401,15 @@
             <p class="contact-info">
                 <strong>Ready to explore?</strong><br>
                 Reach out: <a href="mailto:hello@theplannersassistant.uk">hello@theplannersassistant.uk</a><br>
+                <a href="https://github.com/the-planners-assistant" target="_blank" rel="noopener noreferrer" class="github-link">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>GitHub</title>
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                    View on GitHub
+                </a>
                 </p>
-             <p style="margin-top: 2rem;">Let's build something meaningful, together.</p>
+               <p style="margin-top: 2rem;">Let's build something meaningful, together.</p>
         </section>
     </main>
 
@@ -398,3 +423,4 @@
 
 </body>
 </html>
+```

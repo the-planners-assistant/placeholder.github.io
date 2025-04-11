@@ -64,7 +64,7 @@
         }
 
         .logo svg {
-             /* --- SCALED SVG TO MATCH H1 HEIGHT --- */
+            /* --- SCALED SVG TO MATCH H1 HEIGHT --- */
             height: 10.08rem; /* Matches calculated 3 lines height (3 * 1.2 * 2.8rem) */
             width: 11.86rem;  /* Matches calculated width for aspect ratio */
              /* --- End Scaling --- */
@@ -171,10 +171,10 @@
              border-bottom: 2px solid var(--text-accent);
              padding-bottom: 0.3rem;
              display: inline-block;
-         }
+        }
          #roadmap h3:first-of-type {
              margin-top: 0;
-         }
+        }
 
         /* Get Involved Specifics */
         #get-involved {
@@ -190,12 +190,12 @@
          #get-involved .contact-info {
              font-size: 1.1rem;
              margin-top: 2rem;
-         }
+        }
          #get-involved .contact-info a {
              color: var(--text-accent);
              font-weight: 600;
              text-decoration: none;
-         }
+        }
           #get-involved .contact-info a:hover {
              text-decoration: underline;
           }
@@ -303,22 +303,23 @@
             <div class="logo">
                 <?xml version="1.0" encoding="UTF-8"?>
                 <svg width="100" height="85" viewBox="0 0 100 85" xmlns="http://www.w3.org/2000/svg">
-                    <title>Shorter Map Pin Icon with Compass Rose</title>
-                    <desc>A deep navy, flat-style map pin with a proportionally reduced height below the compass rose. Features smooth curves and an obtuse point. Contains a detailed golden yellow compass rose.</desc>
-                    <path id="pin-background" d="M 50 80 C 35 70, 15 55, 15 35 A 35 35 0 1 1 85 35 C 85 55, 65 70, 50 80 Z" fill="#1C2C4C" stroke="none" />
+                    <title>Shorter Map Pin Icon with 8-Point Compass Rose</title>
+                    <desc>A deep navy, flat-style map pin with a proportionally reduced height below the compass rose. Features smooth curves and an obtuse point. Contains a detailed golden yellow 8-point compass rose with significantly shorter, wider-based intercardinal points.</desc>
+
+                    <path id="pin-background"
+                          d="M 50 80 C 35 70, 15 55, 15 35 A 35 35 0 1 1 85 35 C 85 55, 65 70, 50 80 Z"
+                          fill="#1C2C4C" stroke="none" />
+
                     <g id="compass-rose" transform="translate(0, -15)">
                         <path d="M 37.3 37.3 A 18 18 0 0 1 62.7 37.3" stroke="#FFD100" stroke-width="4" fill="none" />
                         <path d="M 62.7 37.3 A 18 18 0 0 1 62.7 62.7" stroke="#FFD100" stroke-width="4" fill="none" />
                         <path d="M 62.7 62.7 A 18 18 0 0 1 37.3 62.7" stroke="#FFD100" stroke-width="4" fill="none" />
                         <path d="M 37.3 62.7 A 18 18 0 0 1 37.3 37.3" stroke="#FFD100" stroke-width="4" fill="none" />
-                        <polygon points="50,22 53,50 47,50" fill="#FFD100" />
-                        <polygon points="50,78 53,50 47,50" fill="#FFD100" />
-                        <polygon points="78,50 50,53 50,47" fill="#FFD100" />
-                        <polygon points="22,50 50,53 50,47" fill="#FFD100" />
-                        <circle cx="50" cy="50" r="3" fill="#1C2C4C" />
+
+                        <polygon points="50,22 53,50 47,50" fill="#FFD100" /> <polygon points="50,78 53,50 47,50" fill="#FFD100" /> <polygon points="76,50 50,52.5 50,47.5" fill="#FFD100" /> <polygon points="24,50 50,52.5 50,47.5" fill="#FFD100" /> <polygon points="56.4,43.6 54,50 50,46" fill="#FFD100" /> <polygon points="56.4,56.4 50,54 54,50" fill="#FFD100" /> <polygon points="43.6,56.4 46,50 50,54" fill="#FFD100" /> <polygon points="43.6,43.6 50,46 46,50" fill="#FFD100" /> <circle cx="50" cy="50" r="3" fill="#1C2C4C" />
                     </g>
                 </svg>
-            </div>
+                </div>
             <h1>THE<br>PLANNER’S<br>ASSISTANT</h1>
         </div>
         <p class="tagline">Spatially aware. Policy literate. Open by design.</p>
@@ -413,12 +414,10 @@
 
     <footer>
         <div class="container">
-            © 2025 The Planner’s Assistant Project Contributors<br>
-            An open civic-tech prototype for spatial planning support.<br>
+            © 2025 The Planner’s Assistant Project Contributors<br> An open civic-tech prototype for spatial planning support.<br>
             Contact: <a href="mailto:hello@theplannersassistant.uk">hello@theplannersassistant.uk</a>
         </div>
     </footer>
 
 </body>
 </html>
-```
